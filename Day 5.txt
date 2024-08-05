@@ -1,0 +1,162 @@
+//Problem 1:
+Array Joining:
+Input: {1,2,3}
+       {4,5,6}
+output: {1,2,3,4,5,6}
+
+
+//problem 2 -Array Rotation(left rotate)
+public class Demo24 {
+    static public void main(String[] args) {
+        int[] a = { 1, 2, 3, 4, 5 };
+                //  0  1  2  3  4
+        int k = 1;
+        for (int i = 1; i <= k; i++) {
+            int first = a[0];
+            for (int j = 0; j < a.length - 1; j++) {
+                a[j] = a[j + 1];
+            }
+            a[a.length - 1] = first;
+        }
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i]+" ");
+        }
+    }
+}
+//problem -3 -Array Rotation(right rotate)
+public class Demo25 {
+    public static void main(String[] args) {
+        int[] a = { 1, 2, 3, 4, 5 };
+                //  0  1  2  3  4
+        int k = 1;
+        for(int i=1;i<=k;i++)
+        {
+            int last=a[a.length-1];
+            for(int j=a.length-1;j>0;j--){
+                a[j]=a[j-1];
+            }
+            a[0]=last;
+        }
+        for(int i=0;i<a.length;i++){
+            System.out.print(a[i]+" ");
+        }
+    }
+}
+
+//Problem- 4
+Binary Search
+//! Binary search
+
+public class Demo28 {
+    public static void main(String[] args) {
+        int[] a={10,20,30,40,50};
+        int left=0;
+        int right=a.length-1;
+        int searchItem=50;
+        int result=Binary_Search(a,left,right,searchItem);
+        if(result==-1){
+            System.out.println("Not Found");
+        }
+        else{
+            System.out.println("Found");
+        }
+          
+    }
+    public static int Binary_Search(int[] a,int left,int right,int searchItem){
+        while(left<=right)
+        {
+            int mid=(left+right)/2;
+            if(a[mid]==searchItem){
+                return mid;
+            }
+            else if(a[mid]<searchItem){
+                left= mid+1;
+            }
+            else{
+                right=mid-1;
+            }
+        }
+        return -1;
+    }
+}
+
+//problem 5
+CorierFeeCalculator problem
+
+import java.util.Scanner;
+
+public class CourierFeeCalculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Kilometer");
+        int km = sc.nextInt();
+        System.out.println("Enter the Kilogram");
+        int kg = sc.nextInt();
+        sc.close();
+        int fee = 5;
+        int fine1 = 0, fine2 = 0;
+        if (km > 49) {
+            if (km > 50) {
+                fine1 += ((km - 50) / 50 + 1) * 10;
+            } else {
+                fine1 = 10;
+            }
+        }
+        
+        if (kg > 99) {
+            if (kg > 100) {
+                fine2 += ((kg - 100) / 100 + 1) * 10;
+            } else {
+                fine2 = 10;
+            }
+        }
+        
+        System.out.println(fee + fine1 + fine2);
+    }
+}
+
+//problem 6
+
+Move Zero to right side
+
+public class MoveZero {
+    public static void main(String[] args) {
+        int arr[]={3,5,0,0,4};
+        int n=arr.length;
+        int index=0;
+        for(int i=0;i<n;i++)
+        {
+            if(arr[i]!=0)
+            {
+                int temp=arr[i];
+                arr[i]=arr[index];
+                arr[index]=temp;
+                index++;
+            }
+                
+        }
+    }
+}
+//Problem 7
+Power method with out using inbuilt method
+
+public class FindPow {
+    public static void main(String[] args) {
+        int base=2;
+        int power=4;
+        System.out.println(findpow(base,power));
+    }
+    public static int findpow(int base,int power)
+    {
+        int box=1;
+        while (power>0) {
+            box=box*base;
+            power--;
+        }
+        return box;
+    }
+
+}
+//problem 8
+
+
