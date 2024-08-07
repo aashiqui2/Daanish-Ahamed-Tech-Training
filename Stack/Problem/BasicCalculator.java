@@ -12,7 +12,7 @@ class BasicCalculator {
   
       for (final char c : s.toCharArray())
         if (Character.isDigit(c))
-          num = num * 10 + (c - '0');/
+          num = num * 10 + (c - '0');
         else if (c == '(')
           stack.push(sign);
         else if (c == ')')
