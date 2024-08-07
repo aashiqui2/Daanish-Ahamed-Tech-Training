@@ -1,4 +1,3 @@
-package SingleLinkedList;
 class LinkedList {
     Node head;
 
